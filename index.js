@@ -13,8 +13,14 @@ app.get('/test', function (req, res, next) {
   res.status(200).json({ "message": "I rock" })
 });
 
-app.listen((process.env.PORT || 9111), function () {
-  console.log('Example app listening on port 3000!')
+app.get('/suck', function (req, res, next) {
+  res.status(200).json({ message: "I suck" })
+})
+
+const port = process.env.PORT || 9111
+
+app.listen((port || 9111), function () {
+  console.log(`Example app listening on port !`)
 });
 
 module.exports = app;
