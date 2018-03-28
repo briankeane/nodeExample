@@ -1,8 +1,9 @@
-const express = require('express');
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
+const express = require('express')
+const morgan = require('morgan')
+const bodyParser = require('body-parser')
+const controller = require('./controller')
 
-const app = express();
+const app = express()
 
 // middleware
 // app.use(morgan('dev'));
@@ -16,6 +17,10 @@ app.get('/test', function (req, res, next) {
 app.get('/suck', function (req, res, next) {
   res.status(200).json({ message: "I suck" })
 })
+
+app.get('/addNumbers/:firstNumber/:secondNumber', controller.addNumbers)
+
+
 
 const port = process.env.PORT || 9111
 
