@@ -13,7 +13,7 @@ app.get('/test', function (req, res, next) {
   res.status(200).json({ "message": "I rock" })
 });
 
-app.listen(9111, function () {
+app.listen((process.env.PORT || 9111), function () {
   console.log('Example app listening on port 3000!')
 });
 
